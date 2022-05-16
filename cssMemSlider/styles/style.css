@@ -1,0 +1,247 @@
+/*Fonts*/
+@font-face {
+  font-family: 'Nunito', sans-serif;
+  src: url('../assets/fonts/NunitoSans-Regular.ttf') format('truetype');
+}
+
+/*Common styles*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 1s;
+  -moz-transition: 1s;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0.8px;
+}
+/*Main styles*/
+.radioinput {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  order: 5;
+}
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main__container {
+  width: 45em;
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2%;
+  padding: 1.5em;
+  gap: 1.5em;
+  border: 0.3em solid #ffffff;
+}
+.slider__container {
+  /* width: 100%; */
+  overflow: hidden;
+  width: 30.622em;
+}
+.image__container {
+  max-height: 750px;
+  height: 30.62em;
+  width: calc(100% * 5);
+  max-width: 1200px;
+  display: flex;
+}
+.slider__img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 5%;
+}
+/*controls and description styles*/
+.service__container {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+.description__container {
+  width: 50%;
+  overflow: hidden;
+}
+.descriptions {
+  display: flex;
+  align-items: center;
+  width: calc(100% * 5);
+}
+.mems__description {
+  width: calc(100% * 5);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.slider__nav-container {
+  display: flex;
+  align-items: center;
+}
+.radiobtn {
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.pointer {
+  height: 30%;
+  width: 30%;
+  display: block;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #d4026b;
+  background: #ffffff;
+  cursor: pointer;
+}
+.radiobtn:hover .pointer {
+  border: 2px solid #ffffff;
+  background: #ffffff;
+}
+.radiobtn:active .pointer {
+  background-color: #d4026b;
+  border: 2px solid #d4026b;
+}
+
+#mem1:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(1)
+  .pointer {
+  background: #f73696;
+}
+#mem2:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(2)
+  .pointer {
+  background: #f73696;
+}
+#mem3:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(3)
+  .pointer {
+  background: #f73696;
+}
+#mem4:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(4)
+  .pointer {
+  background: #f73696;
+}
+#mem5:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(5)
+  .pointer {
+  background: #f73696;
+}
+
+#mem1:checked ~ .main__container .slider__container .image__container,
+#mem1:checked
+  ~ .main__container.service__container
+  .description__container
+  .descriptions {
+  margin-left: 0;
+}
+#mem2:checked ~ .main__container .slider__container .image__container,
+#mem2:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
+  margin-left: -100%;
+}
+#mem3:checked ~ .main__container .slider__container .image__container,
+#mem3:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
+  margin-left: -200%;
+}
+#mem4:checked ~ .main__container .slider__container .image__container,
+#mem4:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
+  margin-left: -300%;
+}
+#mem5:checked ~ .main__container .slider__container .image__container,
+#mem5:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
+  margin-left: -400%;
+}
+
+/*Adaptive design*/
+@media (max-width: 650px) {
+  .main__container {
+    padding: 1em 1em 1.5em;
+    gap: 1em;
+  }
+  .slider__container {
+    max-width: 100%;
+  }
+  .image__container {
+    max-width: 100%;
+    height: auto;
+  }
+  .service__container {
+    flex-direction: column;
+    row-gap: 1em;
+  }
+  .slider__nav-container {
+    order: 1;
+  }
+  .description__container {
+    width: 100%;
+    order: 2;
+  }
+  .mems__description {
+    font-size: 1.1rem;
+  }
+  .radiobtn {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
