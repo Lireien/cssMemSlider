@@ -1,4 +1,8 @@
 /*Fonts*/
+@font-face {
+  font-family: 'Nunito', sans-serif;
+  src: url('../assets/fonts/NunitoSans-Regular.ttf') format('truetype');
+}
 
 /*Common styles*/
 * {
@@ -17,6 +21,12 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.15rem;
+  letter-spacing: 0.8px;
 }
 /*Main styles*/
 .radioinput {
@@ -32,22 +42,39 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url('../assets/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wrapper:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
 }
 .main__container {
-  /* max-width: 80%; */
-  width: 33.99em;
+  width: 45em;
+  max-width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border-radius: 2%;
   padding: 1.5em;
   gap: 1.5em;
-  border: 3px solid paleturquoise;
+  border: 0.3em solid #ffffff;
+  z-index: 3;
 }
 .slider__container {
   /* width: 100%; */
   overflow: hidden;
+  width: 30.622em;
 }
 .image__container {
   max-height: 750px;
@@ -60,11 +87,12 @@ body {
   width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border-radius: 5%;
 }
 /*controls and description styles*/
 .service__container {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 1em;
 }
@@ -74,11 +102,13 @@ body {
 }
 .descriptions {
   display: flex;
-  align-items:center;
+  align-items: center;
   width: calc(100% * 5);
 }
 .mems__description {
   width: calc(100% * 5);
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 .slider__nav-container {
   display: flex;
@@ -89,6 +119,7 @@ body {
   height: 2em;
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 .pointer {
@@ -97,28 +128,98 @@ body {
   display: block;
   align-items: center;
   border-radius: 50%;
-  border: 2px solid palevioletred;
-  background: rosybrown;
+  border: 2px solid #d4026b;
+  background: #ffffff;
   cursor: pointer;
+}
+.radiobtn:hover .pointer {
+  border: 2px solid #ffffff;
+  background: #ffffff;
+}
+.radiobtn:active .pointer {
+  background-color: #d4026b;
+  border: 2px solid #d4026b;
+}
+
+#mem1:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(1)
+  .pointer {
+  background: #d4026b;
+}
+#mem2:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(2)
+  .pointer {
+  background: #d4026b;
+}
+#mem3:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(3)
+  .pointer {
+  background: #d4026b;
+}
+#mem4:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(4)
+  .pointer {
+  background: #d4026b;
+}
+#mem5:checked
+  ~ .main__container
+  .service__container
+  .slider__nav-container
+  .radiobtn:nth-child(5)
+  .pointer {
+  background: #d4026b;
 }
 
 #mem1:checked ~ .main__container .slider__container .image__container,
-#mem1:checked ~ .main__container.service__container .description__container .descriptions {
+#mem1:checked
+  ~ .main__container.service__container
+  .description__container
+  .descriptions {
   margin-left: 0;
 }
 #mem2:checked ~ .main__container .slider__container .image__container,
-#mem2:checked ~ .main__container .service__container .description__container .descriptions {
+#mem2:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
   margin-left: -100%;
 }
 #mem3:checked ~ .main__container .slider__container .image__container,
-#mem3:checked ~ .main__container .service__container .description__container .descriptions {
+#mem3:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
   margin-left: -200%;
 }
 #mem4:checked ~ .main__container .slider__container .image__container,
-#mem4:checked ~ .main__container .service__container .description__container .descriptions {
+#mem4:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
   margin-left: -300%;
 }
 #mem5:checked ~ .main__container .slider__container .image__container,
-#mem5:checked ~ .main__container .service__container .description__container .descriptions {
+#mem5:checked
+  ~ .main__container
+  .service__container
+  .description__container
+  .descriptions {
   margin-left: -400%;
 }
+
+/*Adaptive design*/
