@@ -34,7 +34,7 @@ body {
   justify-content: center;
 }
 .main__container {
-  max-width: 80%;
+  /* max-width: 80%; */
   width: 33.99em;
   margin: 0 auto;
   display: flex;
@@ -64,19 +64,21 @@ body {
 /*controls and description styles*/
 .service__container {
   display: flex;
-  flex-direction: row;
+  align-items:center;
   justify-content: space-between;
   margin-bottom: 1em;
 }
-.decription__container {
+.description__container {
   width: 50%;
   overflow: hidden;
 }
 .descriptions {
+  display: flex;
+  align-items:center;
   width: calc(100% * 5);
 }
 .mems__description {
-  width: calc(100 * 5);
+  width: calc(100% * 5);
 }
 .slider__nav-container {
   display: flex;
@@ -100,18 +102,23 @@ body {
   cursor: pointer;
 }
 
-#mem1:checked ~ .main__container .slider__container .image__container {
+#mem1:checked ~ .main__container .slider__container .image__container,
+#mem1:checked ~ .main__container.service__container .description__container .descriptions {
   margin-left: 0;
 }
-#mem2:checked ~ .main__container .slider__container .image__container {
+#mem2:checked ~ .main__container .slider__container .image__container,
+#mem2:checked ~ .main__container .service__container .description__container .descriptions {
   margin-left: -100%;
 }
-#mem3:checked ~ .main__container .slider__container .image__container {
+#mem3:checked ~ .main__container .slider__container .image__container,
+#mem3:checked ~ .main__container .service__container .description__container .descriptions {
   margin-left: -200%;
 }
-#mem4:checked ~ .main__container .slider__container .image__container {
+#mem4:checked ~ .main__container .slider__container .image__container,
+#mem4:checked ~ .main__container .service__container .description__container .descriptions {
   margin-left: -300%;
 }
-#mem5:checked ~ .main__container .slider__container .image__container {
+#mem5:checked ~ .main__container .slider__container .image__container,
+#mem5:checked ~ .main__container .service__container .description__container .descriptions {
   margin-left: -400%;
 }
