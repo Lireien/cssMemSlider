@@ -25,7 +25,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-size: inherit;
   font-weight: 400;
-  line-height: 1.15rem;
+  line-height: 120%;
   letter-spacing: 0.8px;
 }
 /*Main styles*/
@@ -54,7 +54,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.55);
+  background-size: cover;
   z-index: 2;
 }
 .main__container {
@@ -91,6 +92,7 @@ body {
 }
 /*controls and description styles*/
 .service__container {
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,8 +117,8 @@ body {
   align-items: center;
 }
 .radiobtn {
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,7 +149,7 @@ body {
   .slider__nav-container
   .radiobtn:nth-child(1)
   .pointer {
-  background: #d4026b;
+  background: #f73696;
 }
 #mem2:checked
   ~ .main__container
@@ -155,7 +157,7 @@ body {
   .slider__nav-container
   .radiobtn:nth-child(2)
   .pointer {
-  background: #d4026b;
+  background: #f73696;
 }
 #mem3:checked
   ~ .main__container
@@ -163,7 +165,7 @@ body {
   .slider__nav-container
   .radiobtn:nth-child(3)
   .pointer {
-  background: #d4026b;
+  background: #f73696;
 }
 #mem4:checked
   ~ .main__container
@@ -171,7 +173,7 @@ body {
   .slider__nav-container
   .radiobtn:nth-child(4)
   .pointer {
-  background: #d4026b;
+  background: #f73696;
 }
 #mem5:checked
   ~ .main__container
@@ -179,7 +181,7 @@ body {
   .slider__nav-container
   .radiobtn:nth-child(5)
   .pointer {
-  background: #d4026b;
+  background: #f73696;
 }
 
 #mem1:checked ~ .main__container .slider__container .image__container,
@@ -223,3 +225,34 @@ body {
 }
 
 /*Adaptive design*/
+@media (max-width: 650px) {
+  .main__container {
+    padding: 1em 1em 1.5em;
+    gap: 1em;
+  }
+  .slider__container {
+    max-width: 100%;
+  }
+  .image__container {
+    max-width: 100%;
+    height: auto;
+  }
+  .service__container {
+    flex-direction: column;
+    row-gap: 1em;
+  }
+  .slider__nav-container {
+    order: 1;
+  }
+  .description__container {
+    width: 100%;
+    order: 2;
+  }
+  .mems__description {
+    font-size: 1.1rem;
+  }
+  .radiobtn {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
